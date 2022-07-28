@@ -1,3 +1,44 @@
+import sys
+sys.stdin = open("덩치.txt")
+T = int(input())
+
+list_ =[]
+for test_case in range(T): # 받은 값을 리스트로 만듭니다. 
+    a, b = map(int, input().split())
+    list_.append([a,b])
+cnt = 0
+ranking = 0
+for i in list_:
+    for j in list_:
+        if i[0] < j[0] and i[1] < j[1]:
+            ranking += 1
+    print(ranking+1, end=" ")
+    ranking = 0
+    
+# 랭킹을 진사람에게 줘서 올리는 방법도 있었네.
+
+
+
+
+# 5
+# 10 185
+# 58 183
+# 88 186
+# 60 175
+# 46 155
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # # 저는 하나하나 비교하는 방식이 아니라 
 # # 리스트를 정렬시켜서 그 위치 인덱스를 가지고 등수를 매겨서 
